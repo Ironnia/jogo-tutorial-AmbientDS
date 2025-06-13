@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbl2mkd4bqx7e"]
+
+[ext_resource type="Theme" uid="uid://b3er4y6isfbo8" path="res://Botões_personalizado.tres" id="1_q6txd"]
+[ext_resource type="Script" uid="uid://bpcvcw47u7lwe" path="res://menu_principal.gd" id="2_1ecg6"]
+[ext_resource type="Texture2D" uid="uid://bupykjkhpcvc5" path="res://Cena de fundo das perguntas.png" id="2_ouo1f"]
+[ext_resource type="AudioStream" uid="uid://uty4f4nwct73" path="res://(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3" id="3_1ecg6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q6txd")
+script = ExtResource("2_1ecg6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = -38.0
+offset_right = 1160.0
+offset_bottom = 712.0
+texture = ExtResource("2_ouo1f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 267.0
+offset_right = 688.0
+offset_bottom = 425.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Iniciar Jogo"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sair do Jogo"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1ecg6")
+volume_db = -52.613
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_iniciar_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_config_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_sair_button_3_pressed"]
