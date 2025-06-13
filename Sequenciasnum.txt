@@ -1,0 +1,20 @@
+Qual o próximo termo da sequência aritmética: 5, 8, 11, 14, ...?|16|18|20|17|4
+Se o primeiro termo de uma PA é 3 e a razão é 4, qual é o quinto termo?|13|15|16|19|4
+Qual a soma dos 5 primeiros termos da PA: 2, 5, 8, 11, ...?|25|30|40|35|4
+Em uma progressão aritmética, o décimo termo é 30 e a razão é 3. Qual o primeiro termo?|2|5|4|3|4
+Qual o próximo termo da sequência geométrica: 2, 6, 18, 54, ...?|108|142|216|162|4
+A sequência 4, 12, 36, 108, ... é uma progressão?|Geométrica com razão 2|Aritmética com razão 8|Geométrica com razão 4|Geométrica com razão 3|4
+Qual o décimo termo da sequência geométrica: 3, 6, 12, 24, ...?|384|512|768|1536|4
+Qual a soma dos 4 primeiros termos da PA: 1, 4, 7, 10, ...?|22|24|26|28|4
+Se o primeiro termo de uma PA é 7 e a razão é 5, qual é o oitavo termo?|37|56|47|42|4
+Em uma PG, o segundo termo é 6 e a razão é 3. Qual é o quarto termo?|18|64|162|54|4
+Qual é a soma dos 6 primeiros termos da PA: 3, 6, 9, 12, ...?|36|45|48|51|4
+Em uma PG, o primeiro termo é 5 e a razão é 4. Qual é o quinto termo?|80|160|640|320|4
+Qual o próximo termo da sequência aritmética: -2, 1, 4, 7, ...?|9|13|11|10|4
+Se o primeiro termo de uma PA é 4 e a razão é -3, qual o quinto termo?|-5|-6|-7|-8|4
+Qual a soma dos 7 primeiros termos da PA: 5, 10, 15, 20, ...?|90|100|120|105|4
+Qual o oitavo termo da sequência geométrica: 2, 4, 8, 16, ...?|64|128|512|256|4
+Se o primeiro termo de uma PA é 9 e a razão é -2, qual o décimo termo?|-9|-10|-11|-8|4
+Em uma PG, o primeiro termo é 8 e a razão é 2. Qual é o sétimo termo?|64|128|256|512|4
+Qual o próximo termo da sequência geométrica: 1, 2, 4, 8, ...?|12|14|18|16|4
+Qual a soma dos 5 primeiros termos da PA: 4, 7, 10, 13, ...?|25|30|35|40|4
