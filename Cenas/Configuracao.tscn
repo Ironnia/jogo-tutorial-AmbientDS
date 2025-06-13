@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdyrxapu5i8hn"]
+
+[ext_resource type="Texture2D" uid="uid://c440lc2feiwm8" path="res://Assets/Cena de fundo das perguntas.png" id="1_6pbxx"]
+[ext_resource type="Theme" uid="uid://bpftg43rvkp5w" path="res://Botaostema.tres" id="1_23tan"]
+[ext_resource type="Script" uid="uid://bw4m7egkhy8fs" path="res://Scripts/Configurações.gd" id="1_q187l"]
+
+[node name="Configuracao" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_23tan")
+script = ExtResource("1_q187l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.313726)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6pbxx")
+
+[node name="Caixa Configuracao -VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -74.0
+offset_right = 264.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="Caixa Configuracao -VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Salvar" type="Button" parent="Caixa Configuracao -VBoxContainer"]
+layout_mode = 2
+text = "Salvar"
+
+[connection signal="pressed" from="Caixa Configuracao -VBoxContainer/Salvar" to="." method="_on_salvar_pressed"]

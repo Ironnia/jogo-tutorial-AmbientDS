@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwk5vqjhoxrd7"]
+
+[ext_resource type="Texture2D" uid="uid://c440lc2feiwm8" path="res://Assets/Cena de fundo das perguntas.png" id="1_lmflw"]
+[ext_resource type="Theme" uid="uid://bpftg43rvkp5w" path="res://Botaostema.tres" id="1_tuwed"]
+[ext_resource type="Script" uid="uid://djh6bepflrnh1" path="res://Scripts/iniciar_o_jogo_button.gd" id="2_15rib"]
+[ext_resource type="Script" uid="uid://11joomeupp64" path="res://Scripts/sair___button_3.gd" id="3_7q8vg"]
+[ext_resource type="Script" uid="uid://r2kgq650r2qd" path="res://Scripts/configuração_button.gd" id="3_kvlgj"]
+[ext_resource type="Script" uid="uid://cl54abke6g4vi" path="res://Scripts/tutorial___button_2.gd" id="3_rtujr"]
+[ext_resource type="AudioStream" uid="uid://dr4riv7clwmyi" path="res://Sons/(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3" id="5_kkgj8"]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tuwed")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.313726)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lmflw")
+
+[node name="Caixa do Menu -VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -74.0
+offset_right = 264.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Iniciar o jogo - Button" type="Button" parent="Caixa do Menu -VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Iniciar o Jogo"
+script = ExtResource("2_15rib")
+
+[node name="Configuração" type="Button" parent="Caixa do Menu -VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Configurações"
+script = ExtResource("3_kvlgj")
+
+[node name="Tutorial - Button2" type="Button" parent="Caixa do Menu -VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Tutorial"
+script = ExtResource("3_rtujr")
+
+[node name="Sair - Button3" type="Button" parent="Caixa do Menu -VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+script = ExtResource("3_7q8vg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kkgj8")
+volume_db = -10.0
+autoplay = true
+mix_target = 1
+parameters/looping = true
+
+[connection signal="pressed" from="Caixa do Menu -VBoxContainer/Iniciar o jogo - Button" to="Caixa do Menu -VBoxContainer/Iniciar o jogo - Button" method="_on_pressed"]
+[connection signal="pressed" from="Caixa do Menu -VBoxContainer/Configuração" to="Caixa do Menu -VBoxContainer/Configuração" method="_on_pressed"]
+[connection signal="pressed" from="Caixa do Menu -VBoxContainer/Tutorial - Button2" to="Caixa do Menu -VBoxContainer/Tutorial - Button2" method="_on_pressed"]
+[connection signal="pressed" from="Caixa do Menu -VBoxContainer/Sair - Button3" to="Caixa do Menu -VBoxContainer/Sair - Button3" method="_on_pressed"]

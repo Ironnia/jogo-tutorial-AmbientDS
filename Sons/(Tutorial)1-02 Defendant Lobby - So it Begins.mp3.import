@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c72s25shc2osc"
+path="res://.godot/imported/(Tutorial)1-02 Defendant Lobby - So it Begins.mp3-f940b5285348b3fdfaf5265c44efb0bc.mp3str"
+
+[deps]
+
+source_file="res://Sons/(Tutorial)1-02 Defendant Lobby - So it Begins.mp3"
+dest_files=["res://.godot/imported/(Tutorial)1-02 Defendant Lobby - So it Begins.mp3-f940b5285348b3fdfaf5265c44efb0bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,913 @@
+[gd_scene load_steps=81 format=3 uid="uid://c1xwjlvn7s4dt"]
+
+[ext_resource type="Script" uid="uid://bvg6l8knjl2fh" path="res://Scripts/Jogo.gd" id="1_083l1"]
+[ext_resource type="Texture2D" uid="uid://c440lc2feiwm8" path="res://Assets/Cena de fundo das perguntas.png" id="1_f2mv2"]
+[ext_resource type="Texture2D" uid="uid://bl576t30p5tsk" path="res://Assets/ui-pack-space-expansion/Vector/Extra/bar_shadow_round_large.svg" id="2_iljj2"]
+[ext_resource type="Texture2D" uid="uid://b3daea7w2ttuq" path="res://Assets/ui-pack-space-expansion/Vector/Blue/bar_round_gloss_large.svg" id="3_hup61"]
+[ext_resource type="Texture2D" uid="uid://dn36yjas158p4" path="res://Assets/ui-pack-space-expansion/Vector/Red/bar_round_gloss_large.svg" id="4_o471q"]
+[ext_resource type="Texture2D" uid="uid://irq24vqf7688" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0013.png" id="5_n0c3d"]
+[ext_resource type="Texture2D" uid="uid://dfxnexu1rf61b" path="res://Personagens/phoenix/Animation_004-balança cabeça/Frame_0022.png" id="6_6ok67"]
+[ext_resource type="Texture2D" uid="uid://c1eh6lb80s82p" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0014.png" id="6_gw114"]
+[ext_resource type="Texture2D" uid="uid://cl2fct0wswpe1" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0014.png" id="6_s58q0"]
+[ext_resource type="Texture2D" uid="uid://c1egpa446x0or" path="res://Personagens/phoenix/Animation_004-balança cabeça/Frame_0023.png" id="7_030xh"]
+[ext_resource type="Texture2D" uid="uid://tctlyssjbccx" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0016.png" id="7_bxmda"]
+[ext_resource type="Texture2D" uid="uid://d3norsmjjtl8k" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0015.png" id="7_rpidi"]
+[ext_resource type="Texture2D" uid="uid://cttgo4itdq2x1" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0017.png" id="8_8k17b"]
+[ext_resource type="Texture2D" uid="uid://d3gc7dic1qd4q" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0012.png" id="8_ai3hb"]
+[ext_resource type="Texture2D" uid="uid://jcl4twg2w2hp" path="res://Personagens/phoenix/Animation_004-balança cabeça/Frame_0024.png" id="8_n57t7"]
+[ext_resource type="Texture2D" uid="uid://yngrsai4vb6f" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0015.png" id="9_gedja"]
+[ext_resource type="Texture2D" uid="uid://cumfhl8thifp7" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0019.png" id="9_haol7"]
+[ext_resource type="Texture2D" uid="uid://c11dsbmu86dxb" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0018.png" id="10_mu6bh"]
+[ext_resource type="Texture2D" uid="uid://77nxchshoab6" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0011.png" id="10_wts7h"]
+[ext_resource type="Texture2D" uid="uid://daf3owvw00wva" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0008.png" id="11_ttj8i"]
+[ext_resource type="Texture2D" uid="uid://bc1u6smhd5wbh" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0020.png" id="11_yajbp"]
+[ext_resource type="Texture2D" uid="uid://byi6jfs3gg7al" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0021.png" id="12_3tms5"]
+[ext_resource type="Texture2D" uid="uid://x50kx0px80ju" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0022.png" id="13_2mhwe"]
+[ext_resource type="Texture2D" uid="uid://cqot52dbh4n2b" path="res://Personagens/Manfred/Animation_006-NONONO/Frame_0023.png" id="14_ub2l2"]
+[ext_resource type="Texture2D" uid="uid://btw7qlhgab6ba" path="res://Personagens/Manfred/Animation_000-idle/Frame_0000.png" id="15_78rdw"]
+[ext_resource type="Texture2D" uid="uid://cup3irwd3vukl" path="res://Personagens/Manfred/Animation_015-FIM/Frame_0054.png" id="15_ahk77"]
+[ext_resource type="Texture2D" uid="uid://q2vqqer7mthn" path="res://Personagens/Manfred/Animation_015-FIM/Frame_0055.png" id="16_hdwgt"]
+[ext_resource type="Texture2D" uid="uid://bw7jqgatb5hvf" path="res://Personagens/Manfred/Animation_004-Nervoso/Frame_0008.png" id="16_nl0t1"]
+[ext_resource type="Texture2D" uid="uid://djsfeus8csfsy" path="res://Personagens/Manfred/Animation_004-Nervoso/Frame_0009.png" id="17_h6gcg"]
+[ext_resource type="Texture2D" uid="uid://b628tatfy4qo8" path="res://Personagens/Manfred/Animation_004-Nervoso/Frame_0010.png" id="18_hatw4"]
+[ext_resource type="Texture2D" uid="uid://c4dgkfcox5x18" path="res://Personagens/phoenix/Animation_016-Ganhou/Frame_0088.png" id="20_2mw4j"]
+[ext_resource type="Texture2D" uid="uid://dgf7ghcywonjs" path="res://Personagens/phoenix/Animation_016-Ganhou/Frame_0089.png" id="21_r66jw"]
+[ext_resource type="Texture2D" uid="uid://lv7r12uni4uf" path="res://Personagens/phoenix/Animation_016-Ganhou/Frame_0090.png" id="22_74opt"]
+[ext_resource type="Texture2D" uid="uid://b41v2bxy5swcm" path="res://Personagens/phoenix/Animation_000-idle/Frame_0000.png" id="24_34nfa"]
+[ext_resource type="Texture2D" uid="uid://cx4h2cn1lssu1" path="res://Personagens/phoenix/Animation_000-idle/Frame_0001.png" id="25_1jr7u"]
+[ext_resource type="Texture2D" uid="uid://b4qk68ctixn31" path="res://Personagens/phoenix/Animation_000-idle/Frame_0002.png" id="26_mkx0n"]
+[ext_resource type="Texture2D" uid="uid://cv50qgjqoi7c" path="res://Personagens/Manfred/Animation_008-Perdendo/Frame_0025.png" id="26_pjlcf"]
+[ext_resource type="Texture2D" uid="uid://d3jhrn6mjx0ox" path="res://Personagens/Manfred/Animation_008-Perdendo/Frame_0026.png" id="27_rj8t2"]
+[ext_resource type="Texture2D" uid="uid://odfvoci56bxa" path="res://Personagens/phoenix/Animation_005-Nega com a cabeça/Frame_0025.png" id="27_u4rns"]
+[ext_resource type="Texture2D" uid="uid://pnb4rn7e3jry" path="res://Personagens/Manfred/Animation_008-Perdendo/Frame_0027.png" id="28_txopd"]
+[ext_resource type="Texture2D" uid="uid://jp0dsse3c3af" path="res://Personagens/phoenix/Animation_005-Nega com a cabeça/Frame_0026.png" id="28_x0cme"]
+[ext_resource type="Texture2D" uid="uid://d3o2bdtum63xe" path="res://Personagens/phoenix/Animation_005-Nega com a cabeça/Frame_0028.png" id="29_knqm4"]
+[ext_resource type="Texture2D" uid="uid://y3mo7aeuvai0" path="res://Personagens/Manfred/Animation_008-Perdendo/Frame_0028.png" id="29_xwfmi"]
+[ext_resource type="Texture2D" uid="uid://c2q15caerlm2o" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0048.png" id="30_c6rhw"]
+[ext_resource type="Texture2D" uid="uid://cl8rl7rlikulg" path="res://Personagens/Manfred/Animation_002-Sorriso/Frame_0004.png" id="30_nekd4"]
+[ext_resource type="Texture2D" uid="uid://bbam4h1e64o2b" path="res://Personagens/phoenix/Animation_005-Nega com a cabeça/Frame_0027.png" id="30_qq2lk"]
+[ext_resource type="Texture2D" uid="uid://j5pqjb2rnft2" path="res://Personagens/phoenix/Animation_005-Nega com a cabeça/Frame_0029.png" id="31_0b0gk"]
+[ext_resource type="Texture2D" uid="uid://bfi81j36iwpg1" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0049.png" id="31_tnh7f"]
+[ext_resource type="Texture2D" uid="uid://ova1hem5iq5e" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0050.png" id="32_58b8l"]
+[ext_resource type="Texture2D" uid="uid://c11x2s87t5wvc" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0051.png" id="33_x5khh"]
+[ext_resource type="Texture2D" uid="uid://ddj5a6gdejxs0" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0053.png" id="34_r4das"]
+[ext_resource type="Texture2D" uid="uid://bibrqjwa66l1c" path="res://Personagens/Manfred/Animation_014-MORREU/Frame_0052.png" id="35_53fpa"]
+[ext_resource type="Texture2D" uid="uid://cboml3eicvs8p" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0074.png" id="46_u15on"]
+[ext_resource type="Texture2D" uid="uid://cenxtetgc0jqr" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0075.png" id="47_iq6th"]
+[ext_resource type="Texture2D" uid="uid://se52nbdg3p80" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0076.png" id="48_4fubk"]
+[ext_resource type="Texture2D" uid="uid://gxxe2xd6gsqa" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0077.png" id="49_ykdnj"]
+[ext_resource type="Texture2D" uid="uid://cgatwacmwdwc3" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0078.png" id="50_726ky"]
+[ext_resource type="Texture2D" uid="uid://b5kgdyjy1qr7k" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0079.png" id="51_6t2n4"]
+[ext_resource type="Texture2D" uid="uid://dvurxixss7an1" path="res://Personagens/phoenix/Animation_014-perdendo/Frame_0080.png" id="52_l6d25"]
+[ext_resource type="Texture2D" uid="uid://bfusig0j071es" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0097.png" id="59_yv4j5"]
+[ext_resource type="Texture2D" uid="uid://diobiyvsru5q1" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0101.png" id="60_mr24k"]
+[ext_resource type="Texture2D" uid="uid://lx276rup55ji" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0102.png" id="61_hy2s5"]
+[ext_resource type="Texture2D" uid="uid://7nte3mdas0k0" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0103.png" id="62_r3gcl"]
+[ext_resource type="Texture2D" uid="uid://cv6h3lrd5jauk" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0100.png" id="63_ad044"]
+[ext_resource type="Texture2D" uid="uid://b6x8glggiycs7" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0098.png" id="64_w1mc3"]
+[ext_resource type="Texture2D" uid="uid://bgeo6m1u85f6n" path="res://Personagens/phoenix/Animation_018-perdeu/Frame_0099.png" id="65_7mxke"]
+[ext_resource type="Texture2D" uid="uid://cimw1rav8re75" path="res://Assets/FRENTE - Cena de fundo das perguntas.png" id="67_hox1r"]
+[ext_resource type="AudioStream" uid="uid://do222covhyhw" path="res://Sons/(Tela Jogo) 1-04 Cross-Examination - Moderato 2001.mp3" id="68_44ous"]
+[ext_resource type="AudioStream" uid="uid://chwqgr8v3ceqf" path="res://Sons/(Tela Jogo, Jogador MORRENDO)1-07 Cross-Examination - Allegro 2001.mp3" id="69_de6k2"]
+[ext_resource type="AudioStream" uid="uid://q056iwymvcaq" path="res://Sons/(Tela Jogo, Jogador PERDEU)1-22 Reminiscences - The DL-6 Incident.mp3" id="70_rhy21"]
+[ext_resource type="AudioStream" uid="uid://d2fhjxmsmocaw" path="res://Sons/(Tela Jogo, Jogador GANHOU) 1-25 Victory! - Our First Win.mp3" id="71_q8am8"]
+[ext_resource type="AudioStream" uid="uid://bibqfno4s20le" path="res://Sons/(Jogador Errou) sfx-lightbang.wav" id="72_c11am"]
+[ext_resource type="AudioStream" uid="uid://frf4r6e01jkr" path="res://Sons/(Jogador Acertou) sfx-lightbulb.wav" id="73_vdtbt"]
+
+[sub_resource type="GDScript" id="GDScript_vr48p"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkfy1"]
+bg_color = Color(0.481966, 0.677468, 0.990983, 1)
+border_width_bottom = 5
+border_color = Color(0.0807167, 0.366588, 0.806211, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5oi3"]
+bg_color = Color(0.247396, 0.524868, 0.96969, 1)
+border_width_bottom = 5
+border_color = Color(0.0807167, 0.366588, 0.806211, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_243hb"]
+bg_color = Color(0.0883426, 0.383324, 0.828129, 1)
+border_width_bottom = 5
+border_color = Color(0.0807167, 0.366588, 0.806211, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqdg0"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+
+[sub_resource type="Theme" id="Theme_ig32j"]
+Button/styles/hover = SubResource("StyleBoxFlat_lkfy1")
+Button/styles/normal = SubResource("StyleBoxFlat_a5oi3")
+Button/styles/pressed = SubResource("StyleBoxFlat_243hb")
+Panel/styles/panel = SubResource("StyleBoxFlat_yqdg0")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orqml"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": ExtResource("6_6ok67")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_030xh")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_n57t7")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_030xh")
+}, {
+"duration": 6.0,
+"texture": ExtResource("6_6ok67")
+}],
+"loop": true,
+"name": &"ACERTEI-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s58q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rpidi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_8k17b")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_haol7")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_8k17b")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_mu6bh")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_8k17b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_haol7")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_haol7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yajbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3tms5")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_2mhwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3tms5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ub2l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3tms5")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_2mhwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3tms5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ub2l2")
+}],
+"loop": true,
+"name": &"Errou-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ahk77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hdwgt")
+}],
+"loop": true,
+"name": &"FIM-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 13.0,
+"texture": ExtResource("20_2mw4j")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_r66jw")
+}, {
+"duration": 2.0,
+"texture": ExtResource("22_74opt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_r66jw")
+}, {
+"duration": 50.0,
+"texture": ExtResource("20_2mw4j")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_r66jw")
+}, {
+"duration": 2.0,
+"texture": ExtResource("22_74opt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_r66jw")
+}, {
+"duration": 43.0,
+"texture": ExtResource("20_2mw4j")
+}],
+"loop": true,
+"name": &"Ganhou-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 17.0,
+"texture": ExtResource("15_78rdw")
+}],
+"loop": true,
+"name": &"Idle-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 25.0,
+"texture": ExtResource("24_34nfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1jr7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mkx0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1jr7u")
+}, {
+"duration": 25.0,
+"texture": ExtResource("24_34nfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1jr7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mkx0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1jr7u")
+}, {
+"duration": 25.0,
+"texture": ExtResource("24_34nfa")
+}],
+"loop": true,
+"name": &"Idle-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_u4rns")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_x0cme")
+}, {
+"duration": 3.0,
+"texture": ExtResource("29_knqm4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_qq2lk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_0b0gk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_qq2lk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_knqm4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_qq2lk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_x0cme")
+}, {
+"duration": 6.0,
+"texture": ExtResource("27_u4rns")
+}],
+"loop": true,
+"name": &"NEGAR-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("16_nl0t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_h6gcg")
+}, {
+"duration": 50.0,
+"texture": ExtResource("18_hatw4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_h6gcg")
+}],
+"loop": true,
+"name": &"Nervoso-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 8.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_bxmda")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_ai3hb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_bxmda")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_gedja")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_gedja")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_gedja")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_n0c3d")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_gw114")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_gedja")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_bxmda")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_ai3hb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_wts7h")
+}, {
+"duration": 25.0,
+"texture": ExtResource("11_ttj8i")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_wts7h")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_ai3hb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_bxmda")
+}],
+"loop": true,
+"name": &"Pensando-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("26_pjlcf")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_rj8t2")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_txopd")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_xwfmi")
+}],
+"loop": true,
+"name": &"Perdendo-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("46_u15on")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_iq6th")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4fubk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_ykdnj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_u15on")
+}, {
+"duration": 2.0,
+"texture": ExtResource("50_726ky")
+}, {
+"duration": 2.0,
+"texture": ExtResource("51_6t2n4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_l6d25")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_u15on")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_iq6th")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4fubk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_ykdnj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_u15on")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_iq6th")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4fubk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_ykdnj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_u15on")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_iq6th")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4fubk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_ykdnj")
+}],
+"loop": true,
+"name": &"Perdendo-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_c6rhw")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_tnh7f")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_58b8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x5khh")
+}, {
+"duration": 6.0,
+"texture": ExtResource("32_58b8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r4das")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_53fpa")
+}],
+"loop": true,
+"name": &"Perdeu-Manfred",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("59_yv4j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_mr24k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hy2s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_r3gcl")
+}, {
+"duration": 5.0,
+"texture": ExtResource("63_ad044")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_yv4j5")
+}, {
+"duration": 4.0,
+"texture": ExtResource("64_w1mc3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("63_ad044")
+}, {
+"duration": 8.0,
+"texture": ExtResource("65_7mxke")
+}],
+"loop": true,
+"name": &"Perdeu-Phoenix",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 17.0,
+"texture": ExtResource("30_nekd4")
+}],
+"loop": true,
+"name": &"Sorriso-Manfred",
+"speed": 20.0
+}]
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+script = SubResource("GDScript_vr48p")
+
+[node name="Telacentral" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ig32j")
+script = ExtResource("1_083l1")
+
+[node name="Cenário" type="TextureRect" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f2mv2")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D2-Phoenix" type="AnimatedSprite2D" parent="Telacentral"]
+texture_filter = 1
+position = Vector2(358, 359)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_orqml")
+animation = &"ACERTEI-Phoenix"
+frame_progress = 0.523653
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D-Manfred" type="AnimatedSprite2D" parent="Telacentral"]
+texture_filter = 1
+position = Vector2(804, 359)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_orqml")
+animation = &"Idle-Manfred"
+frame_progress = 0.0385572
+metadata/_edit_lock_ = true
+
+[node name="Frente cenário" type="TextureRect" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("67_hox1r")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Telacentral"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 768.0
+offset_bottom = 246.0
+
+[node name="Mostrar texto" type="Label" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 246.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = " "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -27.0
+offset_right = 144.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Telacentral/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Button" type="Button" parent="Telacentral/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "  "
+
+[node name="Button2" type="Button" parent="Telacentral/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = " "
+
+[node name="Button3" type="Button" parent="Telacentral/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = " "
+
+[node name="Button4" type="Button" parent="Telacentral/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = " "
+
+[node name="ResumoLabel" type="RichTextLabel" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -305.0
+offset_right = 192.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "test"
+fit_content = true
+
+[node name="BotaoProximo" type="Button" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = -115.0
+offset_right = 145.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Proximo"
+
+[node name="BotaoAnterior" type="Button" parent="Telacentral"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -115.0
+offset_right = -71.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Anterior"
+
+[node name="Menu Principal" type="Button" parent="Telacentral"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 275.0
+offset_right = 639.0
+offset_bottom = 304.0
+text = "Menu Principal"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Telacentral"]
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="Telacentral/CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = -101.0
+offset_right = 370.0
+offset_bottom = -77.0
+grow_vertical = 2
+value = 70.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_iljj2")
+texture_progress = ExtResource("3_hup61")
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="Telacentral/CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -101.0
+offset_right = -240.0
+offset_bottom = -77.0
+grow_horizontal = 0
+grow_vertical = 2
+value = 70.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_iljj2")
+texture_progress = ExtResource("4_o471q")
+
+[node name="Musica de fundo" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("68_44ous")
+volume_db = -5.0
+parameters/looping = true
+
+[node name="Musica 2" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("69_de6k2")
+volume_db = -5.0
+parameters/looping = true
+
+[node name="Jogador Perdeu" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("70_rhy21")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="Jogador Ganhou" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("71_q8am8")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="Errou" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("72_c11am")
+volume_db = 10.0
+
+[node name="Acertou" type="AudioStreamPlayer" parent="Telacentral"]
+stream = ExtResource("73_vdtbt")
+
+[connection signal="pressed" from="Telacentral/VBoxContainer/GridContainer/Button" to="Telacentral" method="_on_button_pressed"]
+[connection signal="pressed" from="Telacentral/VBoxContainer/GridContainer/Button2" to="Telacentral" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Telacentral/VBoxContainer/GridContainer/Button3" to="Telacentral" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Telacentral/VBoxContainer/GridContainer/Button4" to="Telacentral" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Telacentral/BotaoProximo" to="Telacentral" method="_on_botao_proximo_pressed"]
+[connection signal="pressed" from="Telacentral/BotaoAnterior" to="Telacentral" method="_on_botao_anterior_pressed"]
+[connection signal="pressed" from="Telacentral/Menu Principal" to="Telacentral" method="_on_menu_principal_pressed"]

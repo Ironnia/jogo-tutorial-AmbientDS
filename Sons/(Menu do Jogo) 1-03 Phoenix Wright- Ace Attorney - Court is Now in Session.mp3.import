@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dr4riv7clwmyi"
+path="res://.godot/imported/(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3-c2dd0c5f43fe9bbe87e560e7d425af5f.mp3str"
+
+[deps]
+
+source_file="res://Sons/(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3"
+dest_files=["res://.godot/imported/(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3-c2dd0c5f43fe9bbe87e560e7d425af5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

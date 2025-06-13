@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1do13cetk60c"]
+
+[ext_resource type="Texture2D" uid="uid://irq24vqf7688" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0013.png" id="1_aop3y"]
+[ext_resource type="Texture2D" uid="uid://c1eh6lb80s82p" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0014.png" id="2_axli3"]
+[ext_resource type="Texture2D" uid="uid://tctlyssjbccx" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0016.png" id="3_r8by1"]
+[ext_resource type="Texture2D" uid="uid://d3gc7dic1qd4q" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0012.png" id="4_lx8e8"]
+[ext_resource type="Texture2D" uid="uid://yngrsai4vb6f" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0015.png" id="5_1lk8y"]
+[ext_resource type="Texture2D" uid="uid://77nxchshoab6" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0011.png" id="6_8futl"]
+[ext_resource type="Texture2D" uid="uid://daf3owvw00wva" path="res://Personagens/phoenix/Animation_002-pensa/Frame_0008.png" id="7_uwa78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywchg"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_r8by1")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_lx8e8")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_r8by1")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_1lk8y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_1lk8y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_1lk8y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_aop3y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_axli3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_1lk8y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_r8by1")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_lx8e8")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_8futl")
+}, {
+"duration": 25.0,
+"texture": ExtResource("7_uwa78")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_8futl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_lx8e8")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_r8by1")
+}],
+"loop": true,
+"name": &"Pensando-Phoenix",
+"speed": 15.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+disable_mode = 1
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ywchg")
+animation = &"Pensando-Phoenix"
+frame_progress = 0.875768
+
+[node name="Camera2D" type="Camera2D" parent="."]

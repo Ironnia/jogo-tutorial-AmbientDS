@@ -1,47 +1,74 @@
+# =========================================================================
+# SCRIPT: Jogo.gd
+# FUNÇÃO: Controla toda a lógica da cena principal do jogo, incluindo
+#         o quiz, as animações, a vida dos personagens e a tela de resumo.
+# =========================================================================
 extends Control
 
-var perguntas = []
-var pergunta_atual = 0
-var resposta_correta = -1
-var gabarito = []
-var indice_gabarito = 0
+# --- Variáveis de Estado do Jogo ---
+var perguntas = [] # Armazena todas as perguntas carregadas do arquivo.
+var pergunta_atual = 0 # Índice da pergunta que está sendo exibida.
+var resposta_correta = -1 # Índice da alternativa correta para a pergunta atual.
+var respostas_corretas = 0 # Contador de acertos.
+var respostas_erradas = 0 # Contador de erros.
+var gabarito = [] # Salva o histórico de respostas para o resumo final.
+var indice_gabarito = 0 # Controla qual item do gabarito está sendo exibido.
 
+# --- Variáveis de Vida ---
 var player_health = 100
 var boss_health = 100
 
-@onready var pergunta_label = $RichTextLabel
+# --- Referências aos Nós da Cena ---
+@onready var pergunta_label = $"Mostrar texto"
 @onready var botoes = [
-	$VBoxContainer/Button,
-	$VBoxContainer/Button2,
-	$VBoxContainer/Button3,
-	$VBoxContainer/Button4
+	$VBoxContainer/GridContainer/Button,
+	$VBoxContainer/GridContainer/Button2,
+	$VBoxContainer/GridContainer/Button3,
+	$VBoxContainer/GridContainer/Button4
 ]
-@onready var player_sprite = $AnimatedSprite2D
-@onready var boss_sprite = $AnimatedSprite2D2
+@onready var resumo_label = $ResumoLabel
+@onready var botao_proximo = $BotaoProximo
+@onready var botao_anterior = $BotaoAnterior
+@onready var player_health_bar = $CanvasLayer/PlayerHealthBar
+@onready var boss_health_bar = $CanvasLayer/BossHealthBar
+@onready var player_sprite = $"AnimatedSprite2D2-Phoenix"
+@onready var boss_sprite = $"AnimatedSprite2D-Manfred"
+@onready var botao_menu = $"Menu Principal"
 
-@onready var player_health_bar = $phoenix
-@onready var boss_health_bar = $Manfred
+# --- Referências aos Nós de Áudio ---
+@onready var musica_fundo = $"Musica de fundo"
+@onready var som_acertou = $Acertou
+@onready var som_errou = $Errou
 
-@onready var resumo_label = $RichTextLabel
-@onready var botao_proximo = $Proximo
-@onready var botao_anterior = $Anterior
-@onready var botao_menu = $Menu
+# --- Preload de Recursos ---
+# Carrega os arquivos de música na memória antes do jogo começar,
+# para evitar engasgos durante a troca de faixas.
+@onready var musica_1 = preload("res://Sons/(Tela Jogo) 1-04 Cross-Examination - Moderato 2001.mp3")
+@onready var musica_2 = preload("res://Sons/(Tela Jogo, Jogador MORRENDO)1-07 Cross-Examination - Allegro 2001.mp3")
+@onready var musica_ganhou = preload("res://Sons/(Tela Jogo, Jogador GANHOU) 1-25 Victory! - Our First Win.mp3")
+@onready var musica_perdeu = preload("res://Sons/(Tela Jogo, Jogador PERDEU)1-22 Reminiscences - The DL-6 Incident.mp3")
+
 
 func _ready():
+	# Inicializa o jogo.
 	carregar_perguntas()
 	mostrar_pergunta()
-	
-	player_health_bar.max_value = 100
-	boss_health_bar.max_value = 100
-	player_health_bar.value = player_health
-	boss_health_bar.value = boss_health
-	
+	# Esconde os elementos da tela de resumo.
+	resumo_label.visible = false
 	botao_proximo.visible = false
 	botao_anterior.visible = false
 	botao_menu.visible = false
-	player_sprite.play("Parado")
-	boss_sprite.play("Manfred")
+	# Configura as barras de vida.
+	player_health_bar.value = player_health
+	boss_health_bar.value = boss_health
+	# Inicia as animações padrão.
+	player_sprite.play("Idle-Phoenix")
+	boss_sprite.play("Idle-Manfred")
+	# Inicia a música de fundo.
+	musica_fundo.stream = musica_1
+	musica_fundo.play()
 
+# Carrega as perguntas do arquivo de texto escolhido pelo jogador.
 func carregar_perguntas():
 	var config = ConfigFile.new()
 	var erro = config.load("user://config.cfg")
@@ -49,117 +76,167 @@ func carregar_perguntas():
 	
 	if erro == OK:
 		arquivo_perguntas = config.get_value("Jogo", "arquivo_perguntas", "perguntas.txt")
-	
-	var file = FileAccess.open("res://" + arquivo_perguntas, FileAccess.READ)
+	else:
+		print("Erro ao carregar arquivo de configuração. Usando perguntas.txt por padrão.")
+
+	var file = FileAccess.open("res://%s" % arquivo_perguntas, FileAccess.READ)
 	if file:
 		while not file.eof_reached():
 			var linha = file.get_line()
 			var partes = linha.split("|")
 			if partes.size() == 6:
 				perguntas.append(partes)
+		file.close()
+		# Embaralha a ordem das perguntas.
+		randomize()
 		perguntas.shuffle()
 	else:
+		print("Erro ao carregar o arquivo de perguntas.")
 		pergunta_label.text = "Erro ao carregar perguntas."
 
+# Atualiza a interface com a pergunta atual.
 func mostrar_pergunta():
 	if pergunta_atual < perguntas.size():
-		pergunta_label.visible = true
-		for botao in botoes:
-			botao.visible = true
-
 		var pergunta_data = perguntas[pergunta_atual]
-		pergunta_label.bbcode_enabled = true
-		pergunta_label.text = "[center]" + pergunta_data[0] + "[/center]"
+		pergunta_label.text = pergunta_data[0]
 		resposta_correta = int(pergunta_data[5]) - 1
 		
-		for i in range(botoes.size()):
+		# Atualiza as animações baseadas na vida atual.
+		if player_health <= 40:
+			player_sprite.play("Perdendo-Phoenix")
+			mudar_musica(musica_2)
+		else:
+			player_sprite.play("Pensando-Phoenix")
+
+		if boss_health <= 40:
+			boss_sprite.play("Perdendo-Manfred")
+		else:
+			boss_sprite.play("Sorriso-Manfred")
+		
+		# Preenche os botões com as alternativas.
+		for i in range(4):
 			botoes[i].text = pergunta_data[i + 1]
 			botoes[i].disabled = false
-		
-		player_sprite.play("Parado")
-		boss_sprite.play("Manfred")
 	else:
+		# Se não houver mais perguntas, mostra a tela de resumo.
 		mostrar_resumo()
 
-func responder(indice_da_resposta):
+# Função principal que processa a resposta do jogador.
+func responder_alternativa(indice):
+	var pergunta_data = perguntas[pergunta_atual]
+	var resposta_jogador = botoes[indice].text
+	var resposta_certa_texto = botoes[resposta_correta].text
+	
+	# Desabilita os botões para evitar múltiplos cliques.
 	for botao in botoes:
 		botao.disabled = true
-
-	var pergunta_data = perguntas[pergunta_atual]
-	var resposta_do_jogador = botoes[indice_da_resposta].text
-	var texto_resposta_certa = pergunta_data[resposta_correta + 1]
 	
-	gabarito.append({
-		"pergunta": pergunta_data[0], 
-		"resposta_jogador": resposta_do_jogador, 
-		"resposta_certa": texto_resposta_certa
-	})
-	
-	if indice_da_resposta == resposta_correta:
+	if indice == resposta_correta:
+		respostas_corretas += 1
 		boss_health -= 10
 		boss_health_bar.value = boss_health
-		player_sprite.play("Apontando")
+		player_sprite.play("ACERTEI-Phoenix")
+		boss_sprite.play("Nervoso-Manfred")
+		som_acertou.play()
+		print("Resposta correta!")
 	else:
+		respostas_erradas += 1
 		player_health -= 10
 		player_health_bar.value = player_health
-		player_sprite.play("Parado")
-
+		player_sprite.play("NEGAR-Phoenix")
+		boss_sprite.play("Errou-Manfred")
+		som_errou.play()
+		print("Resposta errada.")
+	
+	# Aguarda a animação de feedback terminar.
 	await get_tree().create_timer(1.5).timeout
 	
-	if player_health <= 0 or boss_health <= 0:
+	# Atualiza a animação padrão após o feedback.
+	atualizar_animacoes()
+	
+	# Salva a resposta no gabarito.
+	gabarito.append({"pergunta": pergunta_data[0], "resposta_jogador": resposta_jogador, "resposta_certa": resposta_certa_texto})
+	
+	# Verifica se o jogo terminou.
+	if player_health <= 0:
+		player_sprite.play("Perdeu-Phoenix")
+		boss_sprite.play("Sorriso-Manfred")
+		mudar_musica(musica_perdeu)
+		mostrar_resumo()
+	elif boss_health <= 0:
+		player_sprite.play("Ganhou-Phoenix")
+		boss_sprite.play("Perdeu-Manfred")
+		mudar_musica(musica_ganhou)
 		mostrar_resumo()
 	else:
+		# Se o jogo continua, avança para a próxima pergunta.
 		pergunta_atual += 1
 		mostrar_pergunta()
 
+# Função auxiliar para trocar a música de fundo.
+func mudar_musica(nova_musica):
+	if musica_fundo.stream != nova_musica:
+		musica_fundo.stop()
+		musica_fundo.stream = nova_musica
+		musica_fundo.play()
+
+# Função auxiliar para atualizar as animações de idle com base na vida.
+func atualizar_animacoes():
+	if player_health <= 40:
+		player_sprite.play("Perdendo-Phoenix")
+	else:
+		player_sprite.play("Pensando-Phoenix")
+
+	if boss_health <= 20:
+		boss_sprite.play("Perdendo-Manfred")
+	else:
+		boss_sprite.play("Sorriso-Manfred")
+
+# Conecta os sinais dos botões de alternativa a esta função.
+func _on_button_pressed():
+	responder_alternativa(0)
+func _on_button_2_pressed():
+	responder_alternativa(1)
+func _on_button_3_pressed():
+	responder_alternativa(2)
+func _on_button_4_pressed():
+	responder_alternativa(3)
+
+# Configura e exibe a tela de resumo final.
 func mostrar_resumo():
+	if gabarito.size() > 0:
+		indice_gabarito = 0
+		atualizar_resumo_gabarito()
+		resumo_label.visible = true
+		botao_proximo.visible = true
+		botao_anterior.visible = true
+		botao_anterior.disabled = true
+		botao_menu.visible = true
+	else:
+		resumo_label.text = "Sem respostas para mostrar."
+	
 	pergunta_label.visible = false
 	for botao in botoes:
 		botao.visible = false
-	
-	resumo_label.visible = true
-	botao_proximo.visible = true
-	botao_anterior.visible = true
-	botao_menu.visible = true
-	
-	indice_gabarito = 0
-	atualizar_gabarito_na_tela()
 
-func atualizar_gabarito_na_tela():
+# Atualiza o texto do gabarito na tela.
+func atualizar_resumo_gabarito():
 	var item = gabarito[indice_gabarito]
-	resumo_label.bbcode_enabled = true
-	resumo_label.text = "[center][color=yellow]Pergunta:[/color] %s\n[color=green]Sua resposta:[/color] %s\n[color=red]Resposta correta:[/color] %s\n\nPergunta %d de %d[/center]" % [
-		item["pergunta"],
-		item["resposta_jogador"],
-		item["resposta_certa"],
-		indice_gabarito + 1,
-		gabarito.size()
-	]
-	
-	botao_anterior.disabled = (indice_gabarito == 0)
-	botao_proximo.disabled = (indice_gabarito == gabarito.size() - 1)
+	resumo_label.text = "[center][color=yellow]Pergunta:[/color] " + item["pergunta"] + "\n" + "[color=green]Sua resposta:[/color] " + item["resposta_jogador"] + "\n" + "[color=red]Resposta correta:[/color] " + item["resposta_certa"] + "\n" + "Pergunta " + str(indice_gabarito + 1) + " de " + str(gabarito.size()) + "[/center]"
 
-func _on_alternativa1_button_pressed():
-	responder(0)
+	botao_anterior.disabled = indice_gabarito <= 0
+	botao_proximo.disabled = indice_gabarito >= gabarito.size() - 1
 
-func _on_alternativa2_button_2_pressed():
-	responder(1)
-
-func _on_alternativa3_button_3_pressed():
-	responder(2)
-
-func _on_alternativa4_button_4_pressed():
-	responder(3)
-
-func _on_proximo_pressed():
+# Navegação do gabarito.
+func _on_botao_proximo_pressed():
 	if indice_gabarito < gabarito.size() - 1:
 		indice_gabarito += 1
-		atualizar_gabarito_na_tela()
-
-func _on_anterior_pressed():
+		atualizar_resumo_gabarito()
+func _on_botao_anterior_pressed():
 	if indice_gabarito > 0:
 		indice_gabarito -= 1
-		atualizar_gabarito_na_tela()
-
-func _on_menu_pressed():
-	get_tree().change_scene_to_file("res://Cenas/Menu Principal.tscn")
+		atualizar_resumo_gabarito()
+		
+# Voltar ao menu.
+func _on_menu_principal_pressed():
+	get_tree().change_scene_to_file("res://Cenas/MenuPrincipal.tscn")

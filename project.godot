@@ -10,7 +10,20 @@ config_version=5
 
 [application]
 
-config/name="Tutorial AmbienteDS"
-run/main_scene="uid://dbl2mkd4bqx7e"
+config/name="Duelo de Questões (Discreta)"
+run/main_scene="res://Cenas/MenuPrincipal.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom_font="res://Assets/RifficFree-Bold.ttf"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

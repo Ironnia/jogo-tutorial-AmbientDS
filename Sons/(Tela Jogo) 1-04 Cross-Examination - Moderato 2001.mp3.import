@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do222covhyhw"
+path="res://.godot/imported/(Tela Jogo) 1-04 Cross-Examination - Moderato 2001.mp3-d1a401bed5a6f179dc16061978f3dac5.mp3str"
+
+[deps]
+
+source_file="res://Sons/(Tela Jogo) 1-04 Cross-Examination - Moderato 2001.mp3"
+dest_files=["res://.godot/imported/(Tela Jogo) 1-04 Cross-Examination - Moderato 2001.mp3-d1a401bed5a6f179dc16061978f3dac5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

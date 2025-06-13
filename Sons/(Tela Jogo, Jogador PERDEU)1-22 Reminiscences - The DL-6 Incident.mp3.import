@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q056iwymvcaq"
+path="res://.godot/imported/(Tela Jogo, Jogador PERDEU)1-22 Reminiscences - The DL-6 Incident.mp3-78e3cbbaccff9b9e40d7508e6435c4b8.mp3str"
+
+[deps]
+
+source_file="res://Sons/(Tela Jogo, Jogador PERDEU)1-22 Reminiscences - The DL-6 Incident.mp3"
+dest_files=["res://.godot/imported/(Tela Jogo, Jogador PERDEU)1-22 Reminiscences - The DL-6 Incident.mp3-78e3cbbaccff9b9e40d7508e6435c4b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
