@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbl2mkd4bqx7e"]
 
-[ext_resource type="Theme" uid="uid://b3er4y6isfbo8" path="res://Botões_personalizado.tres" id="1_q6txd"]
-[ext_resource type="Script" uid="uid://bpcvcw47u7lwe" path="res://menu_principal.gd" id="2_1ecg6"]
-[ext_resource type="Texture2D" uid="uid://bupykjkhpcvc5" path="res://Cena de fundo das perguntas.png" id="2_ouo1f"]
+[ext_resource type="Theme" uid="uid://b3er4y6isfbo8" path="res://Assets/Botões_personalizado.tres" id="1_q6txd"]
+[ext_resource type="Script" uid="uid://bpcvcw47u7lwe" path="res://Scripts/menu_principal.gd" id="2_1ecg6"]
+[ext_resource type="Texture2D" uid="uid://bupykjkhpcvc5" path="res://Assets/Cena de fundo das perguntas.png" id="2_ouo1f"]
 [ext_resource type="AudioStream" uid="uid://uty4f4nwct73" path="res://(Menu do Jogo) 1-03 Phoenix Wright- Ace Attorney - Court is Now in Session.mp3" id="3_1ecg6"]
 
 [node name="Control" type="Control"]

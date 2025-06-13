@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://b3er4y6isfbo8"]
 
-[ext_resource type="FontFile" uid="uid://cxbojorljxx7x" path="res://RifficFree-Bold.ttf" id="1_mexdj"]
+[ext_resource type="FontFile" uid="uid://cxbojorljxx7x" path="res://Assets/RifficFree-Bold.ttf" id="1_mexdj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bim45"]
 bg_color = Color(0.380394, 0.644587, 0.914552, 1)

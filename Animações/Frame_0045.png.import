@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bupykjkhpcvc5"
-path="res://.godot/imported/Cena de fundo das perguntas.png-f601803fb1d8a9b2c147f4f763b74d08.ctex"
+uid="uid://ccci5c18de1p0"
+path="res://.godot/imported/Frame_0045.png-d76c9979b8c19056c62a27535d7cdce2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cena de fundo das perguntas.png"
-dest_files=["res://.godot/imported/Cena de fundo das perguntas.png-f601803fb1d8a9b2c147f4f763b74d08.ctex"]
+source_file="res://Animações/Frame_0045.png"
+dest_files=["res://.godot/imported/Frame_0045.png-d76c9979b8c19056c62a27535d7cdce2.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd6w0vaga8tnu"]
 
-[ext_resource type="Theme" uid="uid://b3er4y6isfbo8" path="res://Botões_personalizado.tres" id="1_fcnmu"]
-[ext_resource type="Script" uid="uid://dcubo8ecfaxfp" path="res://configuração.gd" id="2_jvqt8"]
-[ext_resource type="Texture2D" uid="uid://bupykjkhpcvc5" path="res://Cena de fundo das perguntas.png" id="2_uspwl"]
+[ext_resource type="Theme" uid="uid://b3er4y6isfbo8" path="res://Assets/Botões_personalizado.tres" id="1_fcnmu"]
+[ext_resource type="Script" uid="uid://dcubo8ecfaxfp" path="res://Scripts/configuração.gd" id="2_jvqt8"]
+[ext_resource type="Texture2D" uid="uid://bupykjkhpcvc5" path="res://Assets/Cena de fundo das perguntas.png" id="2_uspwl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

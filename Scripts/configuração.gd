@@ -31,4 +31,4 @@ func _on_salvar_button_pressed():
 	config.set_value("Jogo", "arquivo_perguntas", arquivo_selecionado)
 	config.save("user://config.cfg")
 	
-	get_tree().change_scene_to_file("res://Menu Principal.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Menu Principal.tscn")
