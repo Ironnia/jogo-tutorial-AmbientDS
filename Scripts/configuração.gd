@@ -12,7 +12,6 @@ var temas_perguntas = {
 
 func _ready():
 	_preencher_opcoes()
-	salvar_button.pressed.connect(_on_salvar_button_pressed)
 
 func _preencher_opcoes():
 	option_button.clear()

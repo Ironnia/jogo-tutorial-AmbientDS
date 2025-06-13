@@ -296,7 +296,7 @@ offset_bottom = 257.0
 bbcode_enabled = true
 text = "test"
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Jogo"]
+[node name="phoenix" type="TextureProgressBar" parent="Jogo"]
 layout_mode = 0
 offset_left = 247.0
 offset_top = 232.0
@@ -305,12 +305,12 @@ offset_bottom = 256.0
 value = 100.0
 texture_progress = ExtResource("16_2xg7b")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Jogo/TextureProgressBar"]
+[node name="Manfred" type="TextureProgressBar" parent="Jogo"]
 layout_mode = 0
-offset_left = 550.0
-offset_top = 3.0
-offset_right = 646.0
-offset_bottom = 27.0
+offset_left = 797.0
+offset_top = 235.0
+offset_right = 893.0
+offset_bottom = 259.0
 value = 100.0
 texture_progress = ExtResource("17_kvaim")
 
